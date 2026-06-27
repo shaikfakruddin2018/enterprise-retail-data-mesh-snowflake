@@ -1,0 +1,178 @@
+<svg width="1500" height="1010" viewBox="0 0 1500 1010" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0c10"/><stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0 L0 0 0 44" fill="none" stroke="#11161f" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" markerWidth="12" markerHeight="12" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#4a5a7a"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1010" fill="url(#bg)"/>
+  <rect width="1500" height="1010" fill="url(#grid)" opacity="0.5"/>
+
+  <!-- Title -->
+  <rect x="60" y="34" width="48" height="5" rx="2.5" fill="url(#accent)"/>
+  <text x="60" y="74" font-size="30" font-weight="700" fill="#ffffff">Enterprise Retail Data Mesh on Snowflake</text>
+  <text x="62" y="100" font-size="15" fill="#8b949e">Domain-oriented data products · medallion architecture · governance-as-code · BI &amp; AI consumption</text>
+
+  <!-- ============ LEFT SIDEBAR: Terraform IaC ============ -->
+  <rect x="40" y="130" width="240" height="788" rx="14" fill="#0e1622" stroke="#243b2e" stroke-width="1.5"/>
+  <rect x="40" y="130" width="240" height="46" rx="14" fill="#102218"/>
+  <text x="160" y="160" font-size="15" font-weight="700" fill="#34d399" text-anchor="middle">⚙ TERRAFORM · IaC</text>
+  <text x="160" y="196" font-size="11.5" fill="#6b7a8d" text-anchor="middle" letter-spacing="1">PROVISIONS THE PLATFORM</text>
+  <g font-size="12.5" fill="#c8cdd8">
+    <rect x="60" y="216" width="200" height="58" rx="9" fill="#11151d" stroke="#243b2e"/>
+    <text x="74" y="240" font-weight="600">Databases</text>
+    <text x="74" y="260" font-size="11" fill="#8b949e">ANALYTICS · GOVERNANCE · DQ</text>
+
+    <rect x="60" y="288" width="200" height="58" rx="9" fill="#11151d" stroke="#243b2e"/>
+    <text x="74" y="312" font-weight="600">Warehouse</text>
+    <text x="74" y="332" font-size="11" fill="#8b949e">WH_DATAMESH_XS · auto-suspend</text>
+
+    <rect x="60" y="360" width="200" height="92" rx="9" fill="#11151d" stroke="#243b2e"/>
+    <text x="74" y="384" font-weight="600">5 Account Roles (RBAC)</text>
+    <text x="74" y="406" font-size="11" fill="#8b949e">DATAMESH_ADMIN</text>
+    <text x="74" y="424" font-size="11" fill="#8b949e">DBT_TRANSFORM · DATA_STEWARD</text>
+    <text x="74" y="442" font-size="11" fill="#8b949e">ANALYTICS_CONSUMER · STREAMLIT</text>
+  </g>
+  <text x="160" y="500" font-size="11" fill="#5b6478" text-anchor="middle" letter-spacing="1">— reproducible —</text>
+  <text x="160" y="520" font-size="11" fill="#5b6478" text-anchor="middle" letter-spacing="1">infrastructure</text>
+
+  <!-- ============ RIGHT SIDEBAR: Governance ============ -->
+  <rect x="1220" y="130" width="240" height="788" rx="14" fill="#1a1410" stroke="#46361f" stroke-width="1.5"/>
+  <rect x="1220" y="130" width="240" height="46" rx="14" fill="#221a10"/>
+  <text x="1340" y="160" font-size="15" font-weight="700" fill="#f5a623" text-anchor="middle">🛡 GOVERNANCE</text>
+  <text x="1340" y="196" font-size="11.5" fill="#8a7355" text-anchor="middle" letter-spacing="1">GOVERNANCE_DB.POLICIES</text>
+  <g font-size="12.5" fill="#c8cdd8">
+    <rect x="1240" y="216" width="200" height="68" rx="9" fill="#1a1410" stroke="#46361f"/>
+    <text x="1254" y="240" font-weight="600">Object Tags</text>
+    <text x="1254" y="260" font-size="11" fill="#a08a6a">domain · owner · classification</text>
+    <text x="1254" y="277" font-size="11" fill="#a08a6a">data_product · sensitivity</text>
+
+    <rect x="1240" y="298" width="200" height="86" rx="9" fill="#1a1410" stroke="#46361f"/>
+    <text x="1254" y="322" font-weight="600">Masking Policies (PII)</text>
+    <text x="1254" y="342" font-size="11" fill="#a08a6a">user_id · city · income</text>
+    <text x="1254" y="360" font-size="11" fill="#a08a6a">transaction_reference</text>
+    <text x="1254" y="378" font-size="11" fill="#a08a6a">column-level, role-aware</text>
+
+    <rect x="1240" y="398" width="200" height="68" rx="9" fill="#1a1410" stroke="#46361f"/>
+    <text x="1254" y="422" font-weight="600">Row-Access Policy</text>
+    <text x="1254" y="442" font-size="11" fill="#a08a6a">country-based row filtering</text>
+    <text x="1254" y="459" font-size="11" fill="#a08a6a">per consumer role</text>
+  </g>
+  <text x="1340" y="500" font-size="11" fill="#5b6478" text-anchor="middle" letter-spacing="1">— applied across —</text>
+  <text x="1340" y="520" font-size="11" fill="#5b6478" text-anchor="middle" letter-spacing="1">all domains</text>
+
+  <!-- ============ CENTER FLOW ============ -->
+  <!-- helper column bounds: x 320..1180 -->
+
+  <!-- STAGE 1: SOURCES -->
+  <text x="330" y="158" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="2">① SOURCE DATA</text>
+  <g font-size="11.5">
+    <g><rect x="330" y="170" width="158" height="54" rx="9" fill="#11151d" stroke="#1c2230"/><text x="409" y="194" fill="#e6e9f0" font-weight="600" text-anchor="middle">Customer</text><text x="409" y="212" fill="#6b7a8d" text-anchor="middle">users · tickets</text></g>
+    <g><rect x="500" y="170" width="158" height="54" rx="9" fill="#11151d" stroke="#1c2230"/><text x="579" y="194" fill="#e6e9f0" font-weight="600" text-anchor="middle">Product</text><text x="579" y="212" fill="#6b7a8d" text-anchor="middle">products · reviews</text></g>
+    <g><rect x="670" y="170" width="158" height="54" rx="9" fill="#11151d" stroke="#1c2230"/><text x="749" y="194" fill="#e6e9f0" font-weight="600" text-anchor="middle">Sales</text><text x="749" y="212" fill="#6b7a8d" text-anchor="middle">purchases · refunds</text></g>
+    <g><rect x="840" y="170" width="158" height="54" rx="9" fill="#11151d" stroke="#1c2230"/><text x="919" y="194" fill="#e6e9f0" font-weight="600" text-anchor="middle">Inventory</text><text x="919" y="212" fill="#6b7a8d" text-anchor="middle">stock · shipments</text></g>
+    <g><rect x="1010" y="170" width="170" height="54" rx="9" fill="#11151d" stroke="#1c2230"/><text x="1095" y="194" fill="#e6e9f0" font-weight="600" text-anchor="middle">Marketing</text><text x="1095" y="212" fill="#6b7a8d" text-anchor="middle">sessions · campaigns</text></g>
+  </g>
+
+  <line x1="750" y1="226" x2="750" y2="252" stroke="#4a5a7a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- STAGE 2: RAW / INGESTION -->
+  <rect x="330" y="256" width="850" height="84" rx="11" fill="#0d1a24" stroke="#1e3a4f" stroke-width="1.5"/>
+  <text x="352" y="280" font-size="12" font-weight="700" fill="#29B5E8" letter-spacing="1">② INGESTION → DATAMESH_DB Raw Zone ❄</text>
+  <text x="1158" y="280" font-size="10.5" fill="#6b7a8d" text-anchor="end">5 raw schemas · 16 raw tables</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="360" y="298" width="150" height="32" rx="8" fill="#1c1810" stroke="#5c4a1a"/><text x="435" y="318" fill="#FF9900" font-weight="700">AWS S3</text>
+    <rect x="540" y="298" width="150" height="32" rx="8" fill="#11151d" stroke="#243445"/><text x="615" y="318" fill="#c8cdd8">External Stage</text>
+    <rect x="720" y="298" width="140" height="32" rx="8" fill="#11151d" stroke="#243445"/><text x="790" y="318" fill="#c8cdd8">File Format</text>
+    <rect x="890" y="298" width="140" height="32" rx="8" fill="#11151d" stroke="#243445"/><text x="960" y="318" fill="#c8cdd8">COPY INTO</text>
+    <rect x="1060" y="298" width="100" height="32" rx="8" fill="#0d1a24" stroke="#29B5E8" stroke-opacity="0.6"/><text x="1110" y="318" fill="#7ec8f8" font-weight="700">RAW ❄</text>
+  </g>
+  <g stroke="#4a5a7a" stroke-width="1.6" marker-end="url(#ar)">
+    <line x1="510" y1="314" x2="538" y2="314"/>
+    <line x1="690" y1="314" x2="718" y2="314"/>
+    <line x1="860" y1="314" x2="888" y2="314"/>
+    <line x1="1030" y1="314" x2="1058" y2="314"/>
+  </g>
+
+  <line x1="750" y1="340" x2="750" y2="362" stroke="#4a5a7a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- STAGE 3: dbt TRANSFORM -->
+  <rect x="330" y="364" width="850" height="92" rx="11" fill="#1c130f" stroke="#FF694B" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="352" y="392" font-size="12" font-weight="700" fill="#FF694B" letter-spacing="1">③ TRANSFORMATION · dbt</text>
+  <g>
+    <rect x="352" y="404" width="390" height="40" rx="8" fill="#11151d" stroke="#3a2a22"/>
+    <text x="366" y="423" font-size="12" fill="#e6e9f0" font-weight="600">Staging</text>
+    <text x="366" y="438" font-size="10.5" fill="#8b949e">16 views · renamed &amp; typed</text>
+    <rect x="768" y="404" width="394" height="40" rx="8" fill="#11151d" stroke="#3a2a22"/>
+    <text x="782" y="423" font-size="12" fill="#e6e9f0" font-weight="600">Silver</text>
+    <text x="782" y="438" font-size="10.5" fill="#8b949e">16 clean tables · dbt tests (not_null, unique, ranges, relationships)</text>
+  </g>
+
+  <line x1="750" y1="456" x2="750" y2="482" stroke="#4a5a7a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- STAGE 4: DATA MESH DOMAIN GOLD -->
+  <rect x="318" y="486" width="874" height="150" rx="12" fill="#0c1018" stroke="#2a3550" stroke-width="1.5"/>
+  <text x="338" y="512" font-size="13" font-weight="700" fill="url(#accent)" letter-spacing="1">④ DATA MESH — DOMAIN GOLD PRODUCTS</text>
+  <text x="338" y="530" font-size="11" fill="#6b7a8d">each domain owns its own database · GOLD schema · decentralized ownership</text>
+  <g font-size="11">
+    <g><rect x="338" y="540" width="160" height="84" rx="9" fill="#0d1726" stroke="#2a3a5e"/><text x="418" y="562" fill="#38bdf8" font-weight="700" text-anchor="middle" font-size="11">CUSTOMER_DOMAIN</text><text x="418" y="582" fill="#9aa3b5" text-anchor="middle" font-size="10">customer_360</text><text x="418" y="598" fill="#9aa3b5" text-anchor="middle" font-size="10">lifetime_value</text><text x="418" y="614" fill="#9aa3b5" text-anchor="middle" font-size="10">support_summary</text></g>
+    <g><rect x="508" y="540" width="160" height="84" rx="9" fill="#0d1726" stroke="#2a3a5e"/><text x="588" y="562" fill="#818cf8" font-weight="700" text-anchor="middle" font-size="11">PRODUCT_DOMAIN</text><text x="588" y="582" fill="#9aa3b5" text-anchor="middle" font-size="10">product_360</text><text x="588" y="598" fill="#9aa3b5" text-anchor="middle" font-size="10">performance</text><text x="588" y="614" fill="#9aa3b5" text-anchor="middle" font-size="10">supplier_perf</text></g>
+    <g><rect x="678" y="540" width="160" height="84" rx="9" fill="#0d1726" stroke="#2a3a5e"/><text x="758" y="562" fill="#22d3ee" font-weight="700" text-anchor="middle" font-size="11">SALES_DOMAIN</text><text x="758" y="582" fill="#9aa3b5" text-anchor="middle" font-size="10">fct_sales</text><text x="758" y="598" fill="#9aa3b5" text-anchor="middle" font-size="10">daily/monthly_rev</text><text x="758" y="614" fill="#9aa3b5" text-anchor="middle" font-size="10">return_analytics</text></g>
+    <g><rect x="848" y="540" width="160" height="84" rx="9" fill="#0d1726" stroke="#2a3a5e"/><text x="928" y="562" fill="#f5a623" font-weight="700" text-anchor="middle" font-size="11">INVENTORY_DOMAIN</text><text x="928" y="582" fill="#9aa3b5" text-anchor="middle" font-size="10">inventory_status</text><text x="928" y="598" fill="#9aa3b5" text-anchor="middle" font-size="10">stock_alerts</text><text x="928" y="614" fill="#9aa3b5" text-anchor="middle" font-size="10">shipping_perf</text></g>
+    <g><rect x="1018" y="540" width="160" height="84" rx="9" fill="#0d1726" stroke="#2a3a5e"/><text x="1098" y="562" fill="#34d399" font-weight="700" text-anchor="middle" font-size="11">MARKETING_DOMAIN</text><text x="1098" y="582" fill="#9aa3b5" text-anchor="middle" font-size="10">campaign_roi</text><text x="1098" y="598" fill="#9aa3b5" text-anchor="middle" font-size="10">conversion_funnel</text><text x="1098" y="614" fill="#9aa3b5" text-anchor="middle" font-size="10">attribution</text></g>
+  </g>
+
+  <line x1="750" y1="636" x2="750" y2="662" stroke="#4a5a7a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- STAGE 5: CONSUMER-ALIGNED PRODUCTS -->
+  <text x="330" y="682" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1">⑤ CONSUMER-ALIGNED DATA PRODUCTS</text>
+  <g>
+    <rect x="330" y="692" width="272" height="92" rx="10" fill="#0d1424" stroke="#2a3a5e"/>
+    <text x="346" y="714" font-size="12" font-weight="700" fill="#7ec8f8">Cross-Domain Analytics</text>
+    <text x="346" y="732" font-size="10.5" fill="#8b949e">ANALYTICS_DB.RETAIL_ANALYTICS</text>
+    <text x="346" y="750" font-size="10.5" fill="#9aa3b5">customer_360_analytics · exec revenue</text>
+    <text x="346" y="767" font-size="10.5" fill="#9aa3b5">inventory_risk · marketing_attribution</text>
+
+    <rect x="616" y="692" width="272" height="92" rx="10" fill="#15102a" stroke="#7c5cff" stroke-opacity="0.55" stroke-width="1.5"/>
+    <text x="632" y="714" font-size="12.5" font-weight="700" fill="#a99cf0">❄ Snowflake Cortex AI</text>
+    <text x="632" y="732" font-size="10.5" fill="#8b949e">AI_DATA_PRODUCTS_DB.CORTEX_AI</text>
+    <text x="632" y="750" font-size="10.5" fill="#9aa3b5">review sentiment · summaries</text>
+    <text x="632" y="767" font-size="10.5" fill="#9aa3b5">customer profiles · recommendations</text>
+
+    <rect x="902" y="692" width="276" height="92" rx="10" fill="#0d1f16" stroke="#1d5c35"/>
+    <text x="918" y="714" font-size="12" font-weight="700" fill="#3ddc84">Data Quality</text>
+    <text x="918" y="732" font-size="10.5" fill="#8b949e">DATA_QUALITY_DB.DQ</text>
+    <text x="918" y="750" font-size="10.5" fill="#9aa3b5">not-null · unique · ranges</text>
+    <text x="918" y="767" font-size="10.5" fill="#9aa3b5">relationships · dq_summary</text>
+  </g>
+
+  <line x1="750" y1="784" x2="750" y2="810" stroke="#4a5a7a" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- STAGE 6: CONSUMPTION -->
+  <rect x="330" y="814" width="850" height="92" rx="11" fill="#0d1424" stroke="url(#accent)" stroke-opacity="0.6" stroke-width="1.5"/>
+  <text x="352" y="842" font-size="13" font-weight="700" fill="#ffffff">⑥ CONSUMPTION · Streamlit “Cortex Analytics”</text>
+  <text x="352" y="864" font-size="11.5" fill="#9aa3b5">Interactive analytics over the curated layer · key-pair Snowflake auth · grounded, evidence-backed AI</text>
+  <g font-size="10.5" fill="#7ec8f8">
+    <rect x="352" y="876" width="158" height="22" rx="11" fill="#11203a"/><text x="431" y="891" text-anchor="middle">Executive Dashboard</text>
+    <rect x="522" y="876" width="166" height="22" rx="11" fill="#11203a"/><text x="605" y="891" text-anchor="middle">Domain Dashboards ×6</text>
+    <rect x="700" y="876" width="140" height="22" rx="11" fill="#11203a"/><text x="770" y="891" text-anchor="middle">Enterprise Search</text>
+    <rect x="852" y="876" width="190" height="22" rx="11" fill="#1a1430"/><text x="947" y="891" text-anchor="middle" fill="#a99cf0">AI Copilot · Cortex / OpenAI</text>
+  </g>
+
+  <!-- sidebar connectors (dashed, cross-cutting) -->
+  <line x1="280" y1="520" x2="318" y2="520" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <line x1="1192" y1="560" x2="1220" y2="560" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+
+  <!-- footer -->
+  <text x="60" y="958" font-size="11.5" fill="#5b6478">Stack:  Snowflake  ·  Snowflake Cortex AI  ·  dbt (medallion + tests)  ·  Terraform  ·  Streamlit  ·  Plotly  ·  Python  ·  OpenAI</text>
+  <text x="60" y="980" font-size="11.5" fill="#5b6478">Pattern:  Data Mesh (domain ownership · data-as-a-product · federated governance · self-serve platform)</text>
+</svg>

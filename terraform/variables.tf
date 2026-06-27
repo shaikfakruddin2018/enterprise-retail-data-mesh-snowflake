@@ -1,0 +1,8 @@
+variable "snowflake_organization_name" { type = string }
+variable "snowflake_account_name" { type = string }
+variable "snowflake_user" { type = string }
+variable "snowflake_role" { type = string }
+variable "snowflake_private_key_path" {
+  type      = string
+  sensitive = true
+}

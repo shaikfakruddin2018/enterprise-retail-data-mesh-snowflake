@@ -1,0 +1,39 @@
+# ── Secrets — never commit ───────────────────────────────
+.env
+*.env
+!*.env.example
+profiles.yml
+dbt/profiles.yml
+*.p8
+*.pem
+*.key
+.streamlit/secrets.toml
+
+# ── Terraform ────────────────────────────────────────────
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+
+# ── dbt ──────────────────────────────────────────────────
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+.user.yml
+
+# ── Python ───────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ── OS / editor / tooling ────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/

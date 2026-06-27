@@ -1,0 +1,51 @@
+name: 'snowflake_data_mesh_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'snowflake_data_mesh_dbt'
+
+model-paths: ['models']
+analysis-paths: ['analyses']
+test-paths: ['tests']
+seed-paths: ['seeds']
+macro-paths: ['macros']
+snapshot-paths: ['snapshots']
+
+target-path: 'target'
+clean-targets: ['target', 'dbt_packages']
+
+models:
+  snowflake_data_mesh_dbt:
+    staging:
+      +materialized: view
+    silver:
+      +materialized: table
+    marts:
+      +materialized: table
+      customer:
+        +database: CUSTOMER_DOMAIN_DB
+        +schema: GOLD
+      product:
+        +database: PRODUCT_DOMAIN_DB
+        +schema: GOLD
+      sales:
+        +database: SALES_DOMAIN_DB
+        +schema: GOLD
+      inventory:
+        +database: INVENTORY_DOMAIN_DB
+        +schema: GOLD
+      marketing:
+        +database: MARKETING_DOMAIN_DB
+        +schema: GOLD
+      cross_domain:
+        +database: ANALYTICS_DB
+        +schema: RETAIL_ANALYTICS
+        +materialized: view
+    dq:
+      +database: DATA_QUALITY_DB
+      +schema: DQ
+      +materialized: view
+    ai:
+      +database: AI_DATA_PRODUCTS_DB
+      +schema: CORTEX_AI
+      +materialized: table

@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: raw_customer
+    database: DATAMESH_DB
+    schema: RAW_CUSTOMER
+    tables:
+      - name: USERS_RAW
+      - name: SUPPORT_TICKETS_RAW
+
+  - name: raw_product
+    database: DATAMESH_DB
+    schema: RAW_PRODUCT
+    tables:
+      - name: PRODUCTS_RAW
+      - name: REVIEWS_RAW
+      - name: SUPPLIERS_RAW
+
+  - name: raw_sales
+    database: DATAMESH_DB
+    schema: RAW_SALES
+    tables:
+      - name: PURCHASES_RAW
+      - name: PAYMENTS_RAW
+      - name: RETURNS_RAW
+      - name: REFUNDS_RAW
+
+  - name: raw_inventory
+    database: DATAMESH_DB
+    schema: RAW_INVENTORY
+    tables:
+      - name: INVENTORY_RAW
+      - name: WAREHOUSES_RAW
+      - name: SHIPMENTS_RAW
+
+  - name: raw_marketing
+    database: DATAMESH_DB
+    schema: RAW_MARKETING
+    tables:
+      - name: SESSIONS_RAW
+      - name: INTERACTIONS_RAW
+      - name: CAMPAIGNS_RAW
+      - name: CAMPAIGN_PERFORMANCE_RAW

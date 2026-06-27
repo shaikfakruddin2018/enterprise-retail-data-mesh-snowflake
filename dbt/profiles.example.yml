@@ -1,0 +1,16 @@
+# Copy to ~/.dbt/profiles.yml (or this folder) and fill in your values.
+# Uses key-pair auth. NEVER commit the real profiles.yml or your .p8 key.
+snowflake_data_mesh_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"        # e.g. ORG-ACCOUNT
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"  # path to PKCS#8 .p8
+      role: DBT_TRANSFORM_ROLE          # least-privilege transform role (not ACCOUNTADMIN)
+      warehouse: WH_DATAMESH_XS
+      database: CUSTOMER_DOMAIN_DB
+      schema: SILVER
+      threads: 4
+      client_session_keep_alive: false
