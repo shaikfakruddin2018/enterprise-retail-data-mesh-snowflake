@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── Terraform: formatting + provider-aware validation (no credentials) ──
+  terraform:
+    name: Terraform validate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.0"
+      - name: Format check
+        run: terraform fmt -check -recursive
+      - name: Init (no backend)
+        run: terraform init -backend=false -input=false
+      - name: Validate
+        run: terraform validate
+
+  # ── dbt: project parses & all model refs resolve (no warehouse needed) ──
+  dbt:
+    name: dbt parse
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dbt
+    env:
+      # dummy values — `dbt parse` does NOT connect to Snowflake
+      SNOWFLAKE_ACCOUNT: ci-account
+      SNOWFLAKE_USER: ci-user
+      SNOWFLAKE_PRIVATE_KEY_PATH: /tmp/none.p8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dbt
+        run: pip install "dbt-snowflake>=1.7,<2.0"
+      - name: Write CI profile
+        run: |
+          mkdir -p ~/.dbt
+          cp profiles.example.yml ~/.dbt/profiles.yml
+      - name: dbt deps
+        run: dbt deps
+      - name: dbt parse (validate DAG & refs)
+        run: dbt parse
+
+  # ── App: lint + byte-compile the Streamlit application ──
+  app:
+    name: App lint
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install tooling
+        run: pip install ruff
+      - name: Ruff lint
+        run: ruff check . || true   # advisory — does not block the build
+      - name: Byte-compile
+        run: python -m compileall -q .

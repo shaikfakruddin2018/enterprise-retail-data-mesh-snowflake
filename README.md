@@ -19,6 +19,8 @@ enriched with **Snowflake Cortex AI**, and consumed through a **Streamlit** anal
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)
 
+[![CI](https://github.com/shaikfakruddin2018/enterprise-retail-data-mesh-snowflake/actions/workflows/ci.yml/badge.svg)](https://github.com/shaikfakruddin2018/enterprise-retail-data-mesh-snowflake/actions/workflows/ci.yml)
+
 </div>
 
 ---
@@ -121,7 +123,9 @@ dbt build --vars 'use_cortex: false'    # deterministic fallback
 - **Object tags** — `domain`, `owner`, `classification`, `data_product`, `sensitivity`
 - **Masking policies (PII)** — `user_id`, `city`, `income_level`, `transaction_reference` (column-level, role-aware)
 - **Row-access policy** — country-based row filtering per consumer role
-- **RBAC** — 5 roles: `DATAMESH_ADMIN`, `DBT_TRANSFORM`, `DATA_STEWARD`, `ANALYTICS_CONSUMER`, `STREAMLIT_APP`
+- **RBAC** — 5 roles: `DATAMESH_ADMIN`, `DBT_TRANSFORM`, `DATA_STEWARD`, `ANALYTICS_CONSUMER`, `STREAMLIT_APP`, with least-privilege grants fully wired in Terraform (`terraform/grants.tf`) and a role hierarchy rolling up to `SYSADMIN`
+
+> **Infrastructure is validated** — `terraform validate` passes against the Snowflake provider, and CI runs `terraform fmt/validate`, `dbt parse`, and app linting on every push (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ---
 
