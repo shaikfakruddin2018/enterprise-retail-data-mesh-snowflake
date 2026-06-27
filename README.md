@@ -69,7 +69,8 @@ AWS S3  →  External Stage  →  File Format  →  COPY INTO  →  DATAMESH_DB 
 │   ├── models/marts/<domain>  #   gold data products, materialized into each domain database
 │   ├── models/marts/cross_domain  # customer_360_analytics, exec revenue, attribution …
 │   ├── models/ai              #   Snowflake Cortex AI products (sentiment, summaries, profiles)
-│   └── models/dq              #   data-quality summary
+│   ├── models/dq              #   data-quality summary
+│   └── models/presentation    #   21 curated views in ANALYTICS_DB.PRESENTATION (the app's contract)
 ├── terraform/                 # IaC — databases, warehouse, 5 RBAC roles
 ├── app/                       # Streamlit "Cortex Analytics" — 9 dashboards + grounded AI Copilot
 └── docs/                      # architecture diagram, dbt lineage, screenshots
@@ -135,7 +136,7 @@ A polished BI app over the curated layer (`app/`):
 
 - **9 pages** — Executive, Customer, Product, Sales, Inventory, Marketing, Data Quality, Enterprise Search, AI Copilot
 - **Grounded AI Copilot** — answers cite real rows; shows supporting tables + charts
-- **LIVE ↔ DEMO** — runs on realistic synthetic data with no credentials; switches to live Snowflake + OpenAI when `.env` is set
+- **LIVE ↔ DEMO** — runs on realistic synthetic data with no credentials; switches to live Snowflake + OpenAI when `.env` is set. The app reads the **21 curated views in `ANALYTICS_DB.PRESENTATION`**, which are built by the dbt `presentation/` layer from the domain marts — so LIVE mode is backed by real models, not just demo data.
 - **Key-pair Snowflake auth**, parameterised queries, secrets only from env vars
 
 ![App screenshot](docs/app_screenshot.png)

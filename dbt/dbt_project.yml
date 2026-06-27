@@ -49,3 +49,7 @@ models:
       +database: AI_DATA_PRODUCTS_DB
       +schema: CORTEX_AI
       +materialized: table
+    presentation:
+      +database: ANALYTICS_DB
+      +schema: PRESENTATION
+      +materialized: view
